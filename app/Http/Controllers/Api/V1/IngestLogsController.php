@@ -7,7 +7,6 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\IngestLogsRequest;
 use App\Jobs\IngestLogsJob;
-use App\Tasks\StoreLogs;
 use Illuminate\Http\JsonResponse;
 use Throwable;
 use UnexpectedValueException;
@@ -17,7 +16,7 @@ final class IngestLogsController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(IngestLogsRequest $request, StoreLogs $storeLogs): JsonResponse
+    public function __invoke(IngestLogsRequest $request): JsonResponse
     {
         try {
             $validatedData = $request->validated();
