@@ -9,14 +9,14 @@
                     <form class="flex items-center">
                         <label for="simple-search" class="sr-only">Search</label>
                         <div class="relative w-40">
-                            <select name="column" id="column" class="w-full text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-half p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <select wire:model='searchColumn' name="column" id="column" class="w-full text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-half p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                 @foreach ($searchableColumns as $key => $column)
                                     <option value="{{ $key }}">{{ $column }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="relative w-40 left-2">
-                            <select name="search_type" id="search_type" class="w-full text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-half p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <select wire:model.lazy='searchType' name="search_type" id="search_type" class="w-full text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-half p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                                 @foreach($searchTypes as $key => $type)
                                     <option value="{{ $key }}">{{ $type }}</option>
                                 @endforeach
@@ -28,15 +28,15 @@
                                     <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                                 </svg>
                             </div>
-                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Search" required="">
+                            <input wire:model='searchValue' type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Search" required="">
                         </div>
                         <div class="relative left-8">
-                            <button type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
+                            <button wire:click='search()' type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
                                 Search
                             </button>
                         </div>
                         <div class="relative left-10">
-                            <button type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
+                            <button wire:click='clear()' type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
                                 Clear
                             </button>
                         </div>
