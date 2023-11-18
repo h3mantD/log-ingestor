@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\IngestLogsRequest;
+use App\Jobs\IngestLogsJob;
 use App\Tasks\StoreLogs;
 use Illuminate\Http\JsonResponse;
 use Throwable;
@@ -26,7 +27,7 @@ final class IngestLogsController extends Controller
                 throw new UnexpectedValueException(message: 'Logs are empty', code: 422);
             }
 
-            $storeLogs(logs: $logs);
+            dispatch(new IngestLogsJob(logs: $logs));
 
             return response()->json(data: ['status' => true, 'message' => 'Logs are getting ingested']);
         } catch (Throwable $th) {
