@@ -5,7 +5,7 @@
         <!-- Start coding here -->
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
-                <div class="w-full md:w-1/2">
+                <div class="w-full">
                     <form class="flex items-center">
                         <label for="simple-search" class="sr-only">Search</label>
                         <div class="relative w-40">
@@ -33,6 +33,11 @@
                         <div class="relative left-8">
                             <button type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
                                 Search
+                            </button>
+                        </div>
+                        <div class="relative left-10">
+                            <button type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
+                                Clear
                             </button>
                         </div>
                     </form>
