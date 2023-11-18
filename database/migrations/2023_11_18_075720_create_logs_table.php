@@ -17,12 +17,12 @@ return new class() extends Migration
             $table->ulid();
             $table->string(column: 'level');
             $table->string(column: 'message');
-            $table->string(column: 'resource_id');
-            $table->string(column: 'trace_id');
-            $table->string(column: 'span_id');
+            $table->string(column: 'resourceId');
+            $table->string(column: 'traceId');
+            $table->string(column: 'spanId');
             $table->string(column: 'commit');
             $table->json(column: 'metadata');
-            $table->timestamps();
+            $table->timestamp(column: 'timestamp');
         });
     }
 

@@ -12,4 +12,15 @@ use MongoDB\Laravel\Eloquent\Model;
 final class Log extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'level',
+        'message',
+        'resourceId',
+        'traceId',
+        'spanId',
+        'commit',
+        'metadata',
+        'timestamp',
+    ];
 }
