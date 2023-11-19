@@ -29,6 +29,7 @@
                                 </svg>
                             </div>
                             <input wire:model='searchValue' type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Search" required="">
+                            <x-input-error :messages="$errors->get('searchValue')" class="mt-2" />
                         </div>
                         <div class="relative left-8">
                             <button wire:click='search()' type="button" class="h-full inline-flex w-full justify-center gap-x-1.5 rounded-md bg-gray-50 border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" id="menu-button">
@@ -43,6 +44,7 @@
                     </form>
                 </div>
             </div>
+            @livewire("layout.date-filter")
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
