@@ -15,14 +15,14 @@ return new class() extends Migration
     {
         Schema::create('logs', function (Blueprint $table): void {
             $table->ulid();
-            $table->string(column: 'level');
-            $table->string(column: 'message');
-            $table->string(column: 'resourceId');
-            $table->string(column: 'traceId');
-            $table->string(column: 'spanId');
-            $table->string(column: 'commit');
-            $table->json(column: 'metadata');
-            $table->timestamp(column: 'timestamp');
+            $table->string(column: 'level')->index();
+            $table->string(column: 'message')->index();
+            $table->string(column: 'resourceId')->index();
+            $table->string(column: 'traceId')->index();
+            $table->string(column: 'spanId')->index();
+            $table->string(column: 'commit')->index();
+            $table->json(column: 'metadata')->index();
+            $table->timestamp(column: 'timestamp')->index();
         });
     }
 
