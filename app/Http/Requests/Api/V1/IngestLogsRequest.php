@@ -24,13 +24,17 @@ final class IngestLogsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'logs' => ['required', 'json'],
+            'logs' => ['required'],
         ];
     }
 
     public function validated($key = null, $default = null): array
     {
         $validatedData = parent::validated($key, $default);
+
+        if (is_array($validatedData['logs'])) {
+            $validatedData['logs'] = json_encode(value: $validatedData['logs']);
+        }
 
         $validatedData['logs'] = json_decode(json: $validatedData['logs'], associative: true);
 
