@@ -20,7 +20,7 @@ final class LogsComponent extends Component
         'traceId' => 'Trace ID',
         'spanId' => 'Span ID',
         'commit' => 'Commit',
-        'metadata->parentResourceId' => 'Metadata.parentResourceId',
+        'metadata.parentResourceId' => 'Metadata.parentResourceId',
     ];
 
     public array $searchTypes = [
